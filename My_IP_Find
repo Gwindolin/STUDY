@@ -1,0 +1,9 @@
+IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+string IP = string.Empty;
+for (int i = 0; i < host.AddressList.Length; i++)
+{
+  if (host.AddressList[i].AddressFamily == AddressFamily.InterNetwork)
+  {
+    IP = host.AddressList[i].ToString();
+  }
+}
